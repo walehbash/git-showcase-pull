@@ -42,19 +42,19 @@ const Contact = () => {
     <section className="py-20 px-4 bg-gradient-to-br from-primary/5 via-background to-accent/5">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4">
-            Let's Work Together
+          <Badge variant="outline" className="mb-6 px-4 py-2 text-primary border-primary/30 font-medium">
+            <span className="italic">Let's Work Together</span>
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to bring your next project to life? I'm available for new opportunities and collaborations.
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Get In Touch</h2>
+          <p className="text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
+            Ready to bring your <span className="italic text-primary font-semibold">next project to life</span>? I'm available for new opportunities and <span className="italic">collaborations</span>.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <Card className="hover:shadow-lg transition-all duration-300">
+          <Card className="hover:shadow-xl transition-all duration-300 border-border/50">
             <CardHeader>
-              <CardTitle className="text-xl">Contact Information</CardTitle>
+              <CardTitle className="text-xl text-foreground italic">Contact Information</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               {contactInfo.map((info, index) => (
@@ -78,13 +78,13 @@ const Contact = () => {
             </CardContent>
           </Card>
 
-          <Card className="hover:shadow-lg transition-all duration-300">
+          <Card className="hover:shadow-xl transition-all duration-300 border-border/50">
             <CardHeader>
-              <CardTitle className="text-xl">Let's Connect</CardTitle>
+              <CardTitle className="text-xl text-foreground italic">Let's Connect</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <p className="text-muted-foreground">
-                I'm always excited to discuss new opportunities, creative projects, or potential collaborations.
+              <p className="text-foreground/70 leading-relaxed">
+                I'm always excited to discuss <span className="italic text-primary">new opportunities</span>, creative projects, or potential collaborations.
               </p>
               
               <div className="space-y-3">
@@ -98,9 +98,9 @@ const Contact = () => {
                 ))}
               </div>
 
-              <Button className="w-full bg-gradient-to-r from-primary to-accent" asChild>
+              <Button className="w-full bg-gradient-to-r from-primary to-accent hover:shadow-lg transition-all duration-300 py-3 font-semibold" asChild>
                 <a href="mailto:hello@flixpin.com">
-                  Start a Conversation
+                  <span className="italic">Start a Conversation</span>
                 </a>
               </Button>
             </CardContent>

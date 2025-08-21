@@ -35,15 +35,15 @@ const Projects = () => {
     <section className="py-20 px-4 bg-secondary/30">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A selection of my recent work spanning web development, AI applications, and creative projects.
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Featured Projects</h2>
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+            A selection of my <span className="italic text-primary font-semibold">recent work</span> spanning web development, AI applications, and <span className="italic">creative projects</span>.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className={`group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
+            <Card key={index} className={`group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-border/50 ${
               project.featured ? 'lg:col-span-1' : ''
             }`}>
               <CardHeader>
@@ -52,8 +52,8 @@ const Projects = () => {
                     <Badge variant="outline" className="text-xs">
                       {project.category}
                     </Badge>
-                    <CardTitle className="text-xl group-hover:text-primary transition-colors">
-                      {project.title}
+                    <CardTitle className="text-xl group-hover:text-primary transition-colors text-foreground">
+                      <span className="italic">{project.title}</span>
                     </CardTitle>
                   </div>
                   {project.featured && (
@@ -64,13 +64,13 @@ const Projects = () => {
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-foreground/70 leading-relaxed">
                   {project.description}
                 </p>
                 
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="secondary" className="text-xs">
+                    <Badge key={techIndex} variant="secondary" className="text-xs font-medium px-3 py-1">
                       {tech}
                     </Badge>
                   ))}

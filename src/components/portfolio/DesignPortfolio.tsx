@@ -58,29 +58,29 @@ const DesignPortfolio = () => {
     <section className="py-20 px-4">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Design Portfolio</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A showcase of my graphic design work featuring various campaigns, advertisements, and creative compositions using Photoshop and Illustrator.
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Design Portfolio</h2>
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+            A showcase of my <span className="italic text-primary font-semibold">graphic design work</span> featuring various campaigns, advertisements, and creative compositions using <span className="italic">Photoshop and Illustrator</span>.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {designs.map((design) => (
-            <Card key={design.id} className="group overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
-              <div className="aspect-[4/3] overflow-hidden">
+            <Card key={design.id} className="group overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-border/50">
+              <div className="aspect-[4/3] overflow-hidden rounded-t-lg">
                 <img 
                   src={design.image} 
                   alt={design.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <CardContent className="p-6">
-                <div className="space-y-3">
-                  <Badge variant="secondary" className="text-xs">
+                <div className="space-y-4">
+                  <Badge variant="secondary" className="text-xs font-medium px-3 py-1">
                     {design.category}
                   </Badge>
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
-                    {design.title}
+                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors text-foreground">
+                    <span className="italic">{design.title}</span>
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {design.description}
