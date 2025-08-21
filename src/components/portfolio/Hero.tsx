@@ -8,27 +8,27 @@ const Hero = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center space-y-8">
           <div className="space-y-6">
-            <Badge variant="outline" className="text-primary border-primary/30 px-4 py-2 font-medium">
+            <Badge variant="outline" className="text-primary border-primary/30 px-4 py-2 font-medium bg-background/80 backdrop-blur-sm">
               Available for Projects
             </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
-              Hi, I'm <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent italic">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-foreground">
+              Hi, I'm <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-bold">
                 Akanmu Bashir Olawale
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed font-medium">
-              <span className="italic">Co-owner at Flixpin</span> · Fullstack Developer · Photographer · <span className="italic">Photoshop & Illustrator Expert</span>
+            <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto leading-relaxed font-semibold">
+              Co-owner at Flixpin · Fullstack Developer · Photographer · Photoshop & Illustrator Expert
             </p>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              <span className="italic">Crafting digital experiences</span> with code, creativity, and innovation. From web development to visual design, I bring ideas to life.
+            <p className="text-lg text-foreground/90 max-w-2xl mx-auto leading-relaxed font-medium">
+              Crafting digital experiences with code, creativity, and innovation. From web development to visual design, I bring ideas to life.
             </p>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-gradient-to-r from-primary to-accent hover:shadow-xl transition-all duration-300 px-8 py-3 text-base font-semibold">
-              <span className="italic">View Projects</span>
+            <Button size="lg" className="bg-gradient-to-r from-primary to-accent hover:shadow-xl transition-all duration-300 px-8 py-3 text-base font-semibold text-white">
+              View Projects
             </Button>
-            <Button variant="outline" size="lg" className="border-primary/30 hover:bg-primary/5 hover:border-primary/50 transition-all duration-300 px-8 py-3 text-base font-semibold">
+            <Button variant="outline" size="lg" className="border-primary/50 hover:bg-primary/10 hover:border-primary transition-all duration-300 px-8 py-3 text-base font-semibold bg-background/80 backdrop-blur-sm">
               Work With Me
             </Button>
           </div>
