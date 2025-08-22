@@ -1,13 +1,40 @@
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import Index from "./pages/Index";
+import NotFound from "./pages/NotFound";
+import LoadingPage from "./components/LoadingPage";
+
+const queryClient = new QueryClient();
+
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
   return (
-    <div className="min-h-screen bg-white p-8">
-      <h1 className="text-4xl font-bold text-black">
-        Bashir Olawale Portfolio
-      </h1>
-      <p className="text-xl mt-4 text-gray-700">
-        Testing if the app loads...
-      </p>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <HashRouter>
+          {isLoading ? (
+            <LoadingPage onLoadingComplete={handleLoadingComplete} />
+          ) : (
+            <Routes>
+              <Route path="/" element={<Index />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          )}
+        </HashRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
   );
 };
 
