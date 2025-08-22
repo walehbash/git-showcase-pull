@@ -131,16 +131,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes rotate180 {
-          0% {
-            transform: rotateY(0deg);
-          }
-          100% {
-            transform: rotateY(180deg);
-          }
-        }
-      `}</style>
     </nav>
   );
 };
