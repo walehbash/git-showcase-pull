@@ -6,6 +6,14 @@ import { ExternalLink } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
+      title: "Bashir Olawale Portfolio",
+      description: "A modern, responsive portfolio website showcasing my work as a fullstack developer, photographer, and designer. Features dark/light mode, interactive animations, and professional design.",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+      category: "Portfolio Website",
+      liveUrl: "https://walehbash.github.io/git-showcase-pull/",
+      featured: true
+    },
+    {
       title: "Flixpin Investment Platform",
       description: "A modern broker application with real-time analytics, advanced trading features, and a sleek user interface built with React and Node.js.",
       technologies: ["React", "Node.js", "WebSocket"],
