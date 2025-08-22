@@ -128,16 +128,24 @@ const DesignPortfolio = () => {
       {/* Modal */}
       {selectedDesign && selectedDesignData && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-background rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="relative">
-              {/* Close Button */}
-              <button
-                onClick={closeModal}
-                className="absolute top-4 right-4 z-10 bg-background/80 backdrop-blur-sm rounded-full p-2 hover:bg-background transition-colors"
-              >
-                <X className="h-5 w-5" />
-              </button>
+          <div className="bg-background rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+            {/* Close Button - Top Right */}
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 z-20 bg-background/90 backdrop-blur-sm rounded-full p-3 hover:bg-background transition-all duration-200 shadow-lg hover:shadow-xl border border-border/50"
+            >
+              <X className="h-5 w-5 text-foreground" />
+            </button>
 
+            {/* Close Button - Top Left (Alternative position) */}
+            <button
+              onClick={closeModal}
+              className="absolute top-4 left-4 z-20 bg-background/90 backdrop-blur-sm rounded-full p-3 hover:bg-background transition-all duration-200 shadow-lg hover:shadow-xl border border-border/50"
+            >
+              <X className="h-5 w-5 text-foreground" />
+            </button>
+
+            <div className="relative">
               {/* Image */}
               <div className="aspect-video overflow-hidden rounded-t-lg">
                 <img 
