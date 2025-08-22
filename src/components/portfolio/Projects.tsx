@@ -31,6 +31,18 @@ const Projects = () => {
     }
   ];
 
+  const handleProjectClick = (projectTitle: string) => {
+    console.log(`Clicked on project: ${projectTitle}`);
+  };
+
+  const handleLiveDemoClick = (url: string, projectTitle: string) => {
+    if (url !== "#") {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    } else {
+      console.log(`Live demo not available for: ${projectTitle}`);
+    }
+  };
+
   return (
     <section className="py-20 px-4 bg-secondary/30">
       <div className="container mx-auto max-w-6xl">
@@ -43,9 +55,13 @@ const Projects = () => {
 
         <div className="grid lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className={`group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-border/50 ${
-              project.featured ? 'lg:col-span-1' : ''
-            }`}>
+            <Card 
+              key={index} 
+              className={`group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-border/50 cursor-pointer ${
+                project.featured ? 'lg:col-span-1' : ''
+              }`}
+              onClick={() => handleProjectClick(project.title)}
+            >
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div className="space-y-2">
@@ -77,11 +93,15 @@ const Projects = () => {
                 </div>
 
                 <div className="pt-4">
-                  <Button asChild className="w-full group">
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <span>Live Demo</span>
-                      <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </a>
+                  <Button 
+                    className="w-full group"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleLiveDemoClick(project.liveUrl, project.title);
+                    }}
+                  >
+                    <span>Live Demo</span>
+                    <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </div>
               </CardContent>
